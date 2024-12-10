@@ -1,42 +1,27 @@
-import { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import uniqueId from './uniqueId'
+import { TunnelContext } from './TunnelProvider'
 
-class Tunnel extends Component {
-  static propTypes = {
-    id: PropTypes.string,
-    render: PropTypes.func,
-  }
-
-  static contextTypes = {
-    tunnelState: PropTypes.object,
-  }
-
-  itemId = uniqueId()
-
-  componentDidMount() {
-    this.setTunnelProps(this.props)
-  }
-
-  componentDidUpdate() {
-    this.setTunnelProps(this.props)
-  }
-
-  componentWillUnmount() {
-    const { id } = this.props
-    const { tunnelState } = this.context
-    tunnelState.setTunnelProps(id, this.itemId, null)
-  }
-
-  setTunnelProps(newProps) {
-    const { id, ...props } = newProps
-    const { tunnelState } = this.context
-    tunnelState.setTunnelProps(id, this.itemId, props)
-  }
-
-  render() {
-    return null
-  }
+Tunnel.propTypes = {
+  id: PropTypes.string,
 }
 
-export default Tunnel
+export default function Tunnel({ id, ...props }) {
+  const { tunnelState } = React.useContext(TunnelContext)
+
+  const itemId = React.useMemo(() => uniqueId(), [])
+
+  React.useEffect(
+    () => {
+      tunnelState.setTunnelProps(id, itemId, props)
+
+      return () => {
+        tunnelState.setTunnelProps(id, itemId, null)
+      }
+    },
+    [id, itemId, props, tunnelState],
+  )
+
+  return null
+}

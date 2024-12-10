@@ -1,9 +1,9 @@
 {
-  "name": "react-tunnels",
-  "version": "1.1.0",
+  "name": "@spam/react-tunnels",
+  "version": "2.0.0",
   "description": "A easy way to communicate rendering logic and data to ancestor components in React.",
   "main": "./lib/index.js",
-  "repository": "javivelasco/react-tunnels",
+  "repository": "spadettomattia/react-tunnels",
   "scripts": {
     "build": "babel ./src --out-dir ./lib",
     "build:watch": "babel ./src --out-dir ./lib --watch",
@@ -15,8 +15,7 @@
   "keywords": [
     "react",
     "react-tunnels",
-    "portals",
-    "components"
+    "portals"
   ],
   "author": "Javi Velasco <javier.velasco86@gmail.com> (http://javivelasco.com/)",
   "license": "MIT",
@@ -38,8 +37,8 @@
     "jest": "23.5.0",
     "prettier": "1.14.2",
     "prop-types": "15.6.2",
-    "react": "16.4.2",
-    "react-dom": "16.4.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "rimraf": "2.6.2"
   },
   "peerDependencies": {
