@@ -1,6 +1,6 @@
 {
   "name": "@matspa/react-tunnels",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A fork of original react-tunnels updated to new context API",
   "main": "./lib/index.js",
   "repository": {
