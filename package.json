@@ -1,9 +1,12 @@
 {
   "name": "@spam/react-tunnels",
   "version": "2.0.0",
-  "description": "A easy way to communicate rendering logic and data to ancestor components in React.",
+  "description": "A fork of original react-tunnels updated to new context API",
   "main": "./lib/index.js",
-  "repository": "spadettomattia/react-tunnels",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spadettomattia/react-tunnels.git"
+  },
   "scripts": {
     "build": "babel ./src --out-dir ./lib",
     "build:watch": "babel ./src --out-dir ./lib --watch",
