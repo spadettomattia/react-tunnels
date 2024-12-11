@@ -1,11 +1,12 @@
-# React Tunnels 🚇 [![npm](https://img.shields.io/npm/v/react-tunnels.svg?style=flat)](https://www.npmjs.org/package/react-tunnels)[![Build Status](http://img.shields.io/travis/javivelasco/react-tunnels/master.svg?style=flat-square)](https://travis-ci.org/javivelasco/react-tunnels)
+# @spam - React Tunnels
 
 Render React components in placeholders that are placed somewhere else in the component tree.
+- ⚠️ This is a fork of original [react-tunnels](https://www.npmjs.com/package/react-tunnels) with new **React v18 context API**
 
 ## Install
 
 ```
-yarn add react-tunnels
+yarn add @spam/react-tunnels
 ```
 
 ### Why
@@ -78,7 +79,7 @@ Check the live example [here](https://codesandbox.io/s/0ym0n37jnl)
 
 ## About
 
-This project has been developed by [Javi Velasco](https://twitter.com/javivelasco) as a way to build *Breadcrumb* components and `Layout` customizations for a variety of React projects. Any feeback, help or improvements is highly appreciated.
+This project has been originally developed by [Javi Velasco](https://twitter.com/javivelasco) and updated by [SpaM](https://github.com/spadettomattia) due to deprecation of `contextTypes` API in newer version of React.
 
 ## License
 
