@@ -5,7 +5,7 @@
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spadettomattia/react-tunnels.git"
+    "url": "git+https://github.com/spadettomattia/react-tunnels.git#fork/react-context-api"
   },
   "scripts": {
     "build": "babel ./src --out-dir ./lib",
