@@ -1,17 +1,18 @@
-# @spam - React Tunnels
+# @matspa - React Tunnels
 
 Render React components in placeholders that are placed somewhere else in the component tree.
+
 - ⚠️ This is a fork of original [react-tunnels](https://www.npmjs.com/package/react-tunnels) with new **React v18 context API**
 
 ## Install
 
 ```
-yarn add @spam/react-tunnels
+yarn add @matspa/react-tunnels
 ```
 
 ### Why
 
-There is a common use case in React apps where you want to define a `Layout` where the content of some elements is defined by `children` components. For example, you want to define `Layout` just once and reuse it for every page but it has a breadcrumb whose steps depend on `children` components. This tiny library allows you to define *tunnels* to render from an element to whatever another element in the App, even elements located on top of the tree. It's like `Portal` but the target is a *component* instead of a *DOM element*.
+There is a common use case in React apps where you want to define a `Layout` where the content of some elements is defined by `children` components. For example, you want to define `Layout` just once and reuse it for every page but it has a breadcrumb whose steps depend on `children` components. This tiny library allows you to define _tunnels_ to render from an element to whatever another element in the App, even elements located on top of the tree. It's like `Portal` but the target is a _component_ instead of a _DOM element_.
 
 ## Usage
 
@@ -32,7 +33,7 @@ render(
         This will be rendered on the placeholder 👆
       </Tunnel>
     </div>
-  </TunnelProvider>
+  </TunnelProvider>,
 )
 ```
 
@@ -45,11 +46,13 @@ It's easy to build a breadcrumb using the prop `multiple` in the `TunnelPlacehol
 ```jsx
 const Breadcrumbs = () => (
   <TunnelPlaceholder id="breadcrumb" multiple>
-    {({ items }) => (
+    {({ items }) =>
       items.map(({ children, href }) => (
-        <span><a href={href}>{children}</a></span>
+        <span>
+          <a href={href}>{children}</a>
+        </span>
       ))
-    )}
+    }
   </TunnelPlaceholder>
 )
 
@@ -65,8 +68,10 @@ render(
     <Breadcrumbs />
     {/* Somewhere else in children */}
     <Breadcrumb url="/products">Products</Breadcrumb>
-    <Breadcrumb url="/products/123">Product <strong>123</strong></Breadcrumb>
-  </TunnelProvider>
+    <Breadcrumb url="/products/123">
+      Product <strong>123</strong>
+    </Breadcrumb>
+  </TunnelProvider>,
 )
 ```
 
@@ -79,7 +84,7 @@ Check the live example [here](https://codesandbox.io/s/0ym0n37jnl)
 
 ## About
 
-This project has been originally developed by [Javi Velasco](https://twitter.com/javivelasco) and updated by [SpaM](https://github.com/spadettomattia) due to deprecation of `contextTypes` API in newer version of React.
+This project has been originally developed by [Javi Velasco](https://twitter.com/javivelasco) and updated by [matspa](https://github.com/spadettomattia) due to deprecation of `contextTypes` API in newer version of React.
 
 ## License
 
